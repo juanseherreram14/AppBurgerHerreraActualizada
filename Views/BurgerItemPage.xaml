@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1Burger.Views.BurgerItemPage"
+             Title="ITBurgerItemPage"
+             xmlns:models="clr-namespace:App1Burger.Models">
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+             Spacing="10"
+             VerticalOptions="StartAndExpand">
+            <Label Text="Nombre de la hamburguesa:" />
+            <Entry x:Name="name" Text="{Binding Name}"/>
+            <Label Text="Descripción" />
+            <Entry x:Name="desc" Text="{Binding Description}" />
+            <HorizontalStackLayout>
+                <CheckBox x:Name="check" IsChecked="{Binding WithExtraCheese}"
+                CheckedChanged="OnCheckBoxCheckedChanged" />
+                <Label Text="¿Con queso extra?" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Button Text="Guardar cambios"
+                    Clicked="OnSaveClicked" />
+                <Button Text="Cancelar"
+                    Clicked="OnCancelClicked" />
+            </HorizontalStackLayout>
+            <Button Text="Eliminar hamburguesa" 
+                        BackgroundColor="DarkRed"
+                        TextColor="White"
+                        WidthRequest="200"
+                        Clicked="OnDeleteClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

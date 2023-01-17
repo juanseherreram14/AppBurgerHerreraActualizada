@@ -1,4 +1,6 @@
-﻿namespace App1Burger;
+﻿using App1Burger.Data;
+
+namespace App1Burger;
 
 public static class MauiProgram
 {
@@ -13,6 +15,9 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		return builder.Build();
-	}
+        string dbPath = FileAccessHelper.GetLocalFilePath("Burger.db3");
+        builder.Services.AddSingleton<BurgerDatabase>(s => ActivatorUtilities.CreateInstance<BurgerDatabase>(s, dbPath));
+
+        return builder.Build();
+    }
 }
