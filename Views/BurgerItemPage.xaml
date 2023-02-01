@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1Burger.Views.BurgerItemPage"
-             Title="ITBurgerItemPage"
+             Title="BurgerItemPage"
              xmlns:models="clr-namespace:App1Burger.Models">
     <ScrollView>
         <VerticalStackLayout Padding="20"
